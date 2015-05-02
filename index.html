@@ -86,26 +86,44 @@
 		
 		</br></br><strong>Mockup 3:</strong>
 		<img src="images/Dashboard.png" alt="Dashboard">
-		This Mockup is an crossover of the last two. It merges the two text fields of the last Mockup again into a word cloud which is in my oppinion the better visualization.
-		Tableau provides easy ways of filtering and scaling the cload whiich futher improves the way the user might interact with the tag cloud. In addition are the three graphs 
+		This Mockup is an crossover of the last two. It merges the two text fields of the last Mockup again into a word cloud which is in my opinion the better visualization.
+		Tableau provides easy ways of filtering and scaling which further improves the way the user can interact with the tag cloud. In addition are the three graphs 
 		explained in the last Mockup. These should provide enough detailed information if needed and be ignored otherwise.</br>
 		<strong>Pros:</strong> It provides an overview and details on one screen. Linking between the different graphs is possible. This may improve the insight for the user.  </br> 
 		<strong>Cons:</strong> Again this might be a too complex interface. The user cant see how a single tag develops: "hard rock zasdj" -> "hard-rock"
-		
-		
+		</br></br>
+		I am going to use the Third Mockup.
 		
 		<h3> Scenario </h3>
+		The most important problem is the "adjust parameters -> check output -> readjust parameters" workflow. This workflow consists of different tasks which are the following:
+		<ul>
+			<li>Examine/Explore the output tags (tag cloud)
+			<li>Changing a parameter
+			<li>Reflect about the changes
+		</ul>
+		After the initial setup (Upload of data) the user sees the interface with given default values for all parameters. From this starting point the user may start by filtering and exploring 
+		the tag cloud to get a better intuition about the data. This can be achieved by three ways: Clicking on tags directly in the cloud (removing, highlighting). The slider in the upper right corner 
+		let the user filter tags with a min and max number of occurrences. And finally a Dropdown filter where the user can select multiple items or reaktivate removed ones.
+		Now the user might change one or more parameters on the right side of the screen. After a few seconds the whole interface will be updated. 
+		The three graphs on the lower border provide the user with further information how his parameter change has affected the different algorithm steps.
+		Example: The user examines the tag cloud and sees a lot of single tags which "should" be grouped. All of the groups shown in the grouping graph on the lower border of the interface seem to be ok.
+		With that knowledge he decides to lowers the grouping threshold. After the update the can again look at the grouping graph and the tag cloud how his changes has affected the output. From that point the
+		next iteration start.
+
+		</br></br><strong>Workflow:</strong>
+		<img src="images/Workflow_notes.png" alt="Workflow">
 		
 		<h3> Implementation </h3>
-		<strong>Preferred solution:</strong>
-		AngularJS + D3 on client side and Python (django) on server side. </br>
-		I have not enough/no experience with the proposed tools. That would mean a lot of background work which has nothing to do with visualization.</br>
-		</br>
-		<strong>Possible solutions:</strong>
-		Using the existing Java code and accessing it with a local D3 page or Tableau.</br>
+		I am going to use Tableau and Java. My tools are Vim, Eclipse and Tableau. The reason I use this combination is that I can focus on the visualization and not on the implementation.
+		
 		
 		<h3> Milestones </h3>
-		At this point there are too many unknowns for meaningful plan.
+		<ul>
+			<li>Week 11: Creating the workbooks
+			<li>Week 12: Merging them into a dashboard and adding the global links/filter...
+			<li>Week 13: Reflecting colors, arrangement and chosen visualizations
+			<li>Week 14: M2 Presentation
+		</ul>
 		
 		</section>
     </div>
