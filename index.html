@@ -27,6 +27,7 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
 		<section id="main_content" class="inner">
+    <a id="banner" href="mockup.html">Goto Mockups</a>
 		<h3> Group </h3>
 		Christoph Kralj - <a href="mailto:a1031064@unet.univie.ac.at">a1031064@unet.univie.ac.at</a></br></br>
 		
@@ -55,74 +56,54 @@
 		
 		<img src="images/Algorithm.png" alt="Algorithm">
 		
-		<h3> Proposed Solution </h3>
-		<strong>Target:</strong> A visual interface which let the user easily manipulate the cleaning pipeline and gives "instant" feedback about the output.
-		</br></br>
-		<strong>Tasks:</strong>
-		<ul>
-			<li>Getting an overview of the tag space (Filtering, zooming)
-			<li>Parametrize the algorithm 
-			<li>Check the processed tags
-			<li>Get information for a better parameter combination
-			<li>Iterate through the last three tasks until the user is satisfied with the output
-		</ul>
-		
-		</br><strong>Mockup 1:</strong>
-		<img src="images/Tableau.png" alt="Tableau">
-		The first Mockup is an Tableau Dashboard. It uses the great data exploration capabilities Tableau provides. The data is visualized through a word cloud which seems to be a reasonable 
-		way of giving the user feedback what the algorithm output is. </br>
-		<strong>Pros:</strong> This interface provides a good overview and a simple UI.</br> 
-		<strong>Cons:</strong> Its not clear how the different steps of the algorithm (the parameters) affect the solution.
-		
-		</br></br><strong>Mockup 2:</strong>
-		<img src="images/Website.png" alt="D3">
-		The second Mockup is a D3 Page. Here are more detailed graphs about how the parameters influence the data. On the top left and right 
-		corner are text fields which are connected (The same tags are in both lists). This provides the user with detailed about how a special tag develops. Between those are the parameter controls. 
-		At the lower border are three graphs. Each corresponds to one refining step. The left one shows as histogram the number of replacements. The 2
-		bin shows how many words replace two other words. The middle graph is a heatmap where the size is the connection strength between those two tags.
-		The right graph is related to computed weight for each tag. It shows as histogram the distribution of the weight and highlights the cutoff-point.</br> 
-		<strong>Pros:</strong> A lot of information about the impact of the different steps and the possibility to see how a tag develops.</br> 
-		<strong>Cons:</strong> The overview is not as good as in the first Mockup.
-		
-		</br></br><strong>Mockup 3:</strong>
-		<img src="images/Dashboard.png" alt="Dashboard">
-		This Mockup is an crossover of the last two. It merges the two text fields of the last Mockup again into a word cloud which is in my opinion the better visualization.
-		Tableau provides easy ways of filtering and scaling which further improves the way the user can interact with the tag cloud. In addition are the three graphs 
-		explained in the last Mockup. These should provide enough detailed information if needed and be ignored otherwise.</br>
-		<strong>Pros:</strong> It provides an overview and details on one screen. Linking between the different graphs is possible. This may improve the insight for the user.  </br> 
-		<strong>Cons:</strong> Again this might be a too complex interface. The user cant see how a single tag develops: "hard rock zasdj" -> "hard-rock"
-		</br></br>
-		I am going to use the Third Mockup.
-		
-		<h3> Scenario </h3>
-		The most important problem is the "adjust parameters -> check output -> readjust parameters" workflow. This workflow consists of different tasks which are the following:
-		<ul>
-			<li>Examine/Explore the output tags (tag cloud)
-			<li>Changing a parameter
-			<li>Reflect about the changes
-		</ul>
-		After the initial setup (Upload of data) the user sees the interface with given default values for all parameters. From this starting point the user may start by filtering and exploring 
-		the tag cloud to get a better intuition about the data. This can be achieved by three ways: Clicking on tags directly in the cloud (removing, highlighting). The slider in the upper right corner 
-		let the user filter tags with a min and max number of occurrences. And finally a Dropdown filter where the user can select multiple items or reaktivate removed ones.
-		Now the user might change one or more parameters on the right side of the screen. After a few seconds the whole interface will be updated. 
-		The three graphs on the lower border provide the user with further information how his parameter change has affected the different algorithm steps.
-		Example: The user examines the tag cloud and sees a lot of single tags which "should" be grouped. All of the groups shown in the grouping graph on the lower border of the interface seem to be ok.
-		With that knowledge he decides to lowers the grouping threshold. After the update the can again look at the grouping graph and the tag cloud how his changes has affected the output. From that point the
-		next iteration start.
 
-		</br></br><strong>Workflow:</strong>
-		<img src="images/Workflow_notes.png" alt="Workflow">
-		
 		<h3> Implementation </h3>
+		<img src="images/Overview.png" alt="Overview">
+    The current interface is the product of three Feedback-Refinment steps. The first step was the implementation and my own first steps with the inteface. After that i 
+    showed it to a colleague, got feedback and reworked the interface. The last step was another Feedback-Refinement step. </br></br>
+    <strong>Feedback:</strong>
+    <ul>
+      <li> I tried to use a heatmap as group representation. The feedback showed that the heatmap is hard to interpret and the users preferred a simple list.
+      <li> The naming of the parameters on the right side was the next big issue. For non-computer scientists was unclear how the [0,1] range works. Thats the reason i changed the parameters to percent. Which got far better feedback. This improved further after I changed the grouping strength visualization to percent.
+      <li> I changed the names of the parameters to improve the understandability.
+      <li> First i had no graph for the occurrences of the tags. This graph provides additional information for the user to improve his tag cloud interation.
+      <li> I removed the replaced words graph. The feedback was that it gives not that much information and clutters the interface.
+    </ul>
+
+    The two bar graphs show the distribution (as histrogram) of the occurrences and the weight over all tags. The overall feedback was very good and especially the tag cloud seems to be a good way of exploring a tag space.
+
+    <h3> Workflow </h3>
+    <strong> Step 1 </strong>
+		<img src="images/explore.png" alt="Exploring">
+      The first step is the exploration of the current state (default at the beginning). The tag cloud provides information about the current tag space state. The two filter (by occurrence and weight) give the user control over what the cloud shows. He might search for all tags with a high weight. Or tags with a low occurrence and a high weight. Big tags occurring more often and dark green tags have a higher weight. The user has to decide if the current state is what he whats. </br> </br>
+    <strong> Step 2 </strong>
+    <img src="images/changing.png" alt="Changing">
+      The two bar charts give additional informations about occurrence and weight. The user might decide to decrease the filter threshold because their are too many tags filtered. From this point the user can change the parameters on the right side. The groups list gives information about all the groups sorted by their strength. Maybe he sees that "and roll" is grouped what is not really a group. Again he can change the group parameter accordingly to improve the tag quality. </br> </br>
+    <strong> Step 3 </strong>
+    <img src="images/reflecting.png" alt="Reflecting">
+      Changing the parameters refreshes the tag cloud the the user can check the resulting tag cloud. Again the three lower plots give instant feedback how the overall state has changed. If that looks ok the user can explore the cloud further with the filters. From this point the user iterates through those three steps until the has a solution which suits his needs. </br> </br>
+
+		<h3> Implementation Tools and Languages</h3>
 		I am going to use Tableau and Java. My tools are Vim, Eclipse and Tableau. The reason I use this combination is that I can focus on the visualization and not on the implementation.
 		
+    <h3> Questions </h3>
+    <ul>
+      <li> Which information is needed to move through the tag space. Provide the three graphs enough information?
+      <li> Is the naming of the parameters clear?
+      <li> Is a list the best representation for the groups?
+    </ul>
 		
 		<h3> Milestones </h3>
 		<ul>
-			<li>Week 11: Creating the workbooks
-			<li>Week 12: Merging them into a dashboard and adding the global links/filter...
-			<li>Week 13: Reflecting colors, arrangement and chosen visualizations
+      <li>Week 11: Creating the workbooks (Done)
+      <li>Week 12: Merging them into a dashboard and adding the global links/filter... (Done)
+      <li>Week 13: Reflecting colors, arrangement and chosen visualizations (Done)
 			<li>Week 14: M2 Presentation
+		</ul>
+		<ul>
+      <li>Week 15: Reflecting and implementing feedback from M2
+      <li>Week 16: Refinements
+			<li>Week 17: Final Presentation
 		</ul>
 		
 		</section>
