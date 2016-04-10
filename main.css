@@ -1,0 +1,51 @@
+.small {
+  font-size: small;
+  position: relative;
+  top: 2px;
+  margin-left: 0; 
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.main {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.single {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.inner {
+  margin-top: 10px;
+  margin-left: 12px;
+  width: 85%;
+}
+
+.navlist {
+  text-align: right;
+  position: absolute;
+  left: -95px;
+}
+
+.cv-text {
+  width: 100px; 
+  display: inline-block;
+  vertical-align: top;
+}
+
+.vl {
+  border-left: 1px solid #ccc;
+  left: -5px;
+  position: absolute;
+}
+
+.corner {
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  border-top-left-radius: 5px;
+  position: absolute;
+}

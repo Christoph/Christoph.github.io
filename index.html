@@ -1,122 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
+<!--suppress HtmlUnknownTarget -->
 <html>
+<head>
+  <meta charset="utf-8">
+  <title>Christoph Kralj</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Christoph.GitHub.io : ">
+  <!-- styles -->
+  <link rel="stylesheet" href="yeti.css" />
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+<!-- content -->
 
-    <title>Christoph.GitHub.io</title>
-  </head>
+<!-- MAIN -->
+<div id="main">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Christoph Kralj</a>
+      </div>
+      <a class="pull-right fa fa-github navbar-github" style="margin-top: 7px; color: white; font-size: xx-large" href="https://github.com/Christoph"></a>
+      <a class="pull-right fa fa-envelope-o navbar-github" style="margin-top: 7px; color: white; font-size: xx-large" href="mailto:christoph.kralj@gmail.com?Subject=Hello%20Christoph!" target="_top"></a>
+    </div> 
+  </nav>
 
-  <body>
+  <div class="main">
+    <a href="about.html">CV</a>
+    <a href="contact.html">Contact New</a>
+  </div>
+</div>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/Christoph">View on GitHub</a>
-
-          <h1 id="project_title">Visualization Project</h1>
-          <h2 id="project_tagline">Tag Refinery</h2>
-
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-		<section id="main_content" class="inner">
-    <a id="banner" href="mockup.html">Goto Mockups</a>
-		<h3> Group </h3>
-		Christoph Kralj - <a href="mailto:a1031064@unet.univie.ac.at">a1031064@unet.univie.ac.at</a></br></br>
-		
-		<strong>Expertise</strong>
-		<ul>
-			<li>Working now around half a year with social music tags.
-			<li>Decent Java knowledge.
-		</ul>
-		
-		<h3> Description </h3>
-		Tag Refinery is a visual supported social tag cleaning tool. In today's world we can find everywhere tags: movies, music, papers and many more. Those should help us find want we want or 
-		help us finding new interesting things. Here I am going to use the million song database as dataset for Tag Refinery to improve the quality of the tags. Why? Social tags like those 
-		in last.fm give additional information but with the drawback of having no strict rules about language, spelling or the meaning of a word. That adds a lot of noise to the information that 
-		the tags would provide. Especially if you want to get deeper insight into the given topic its important to find spelling error, synonyms and words which are connected. 
-		
-		Doing this clean-up is no easy task and this tool should support it with an visual interface. The visualization should help the user deciding with parameters are the correct ones for his
-		problem e.g. tags. The cleaning pipeline consists of three different parts and each part has a set of parameters.
-		
-		<h4> Goals </h4>
-		The whole visualization should provide the user with all informations needed to decide with parameter combination leads to the best output. The underlying algorithm has three parts:
-		<ul>
-			<li><strong>Removing spelling errors:</strong> The tool should give the user direct feedback which words are going to be substituted by the algorithm given the chosen parameters.
-			<li><strong>Finding word groups:</strong> Another important part is finding words which should be grouped, like "hard-rock" instead of "hard" and "rock".
-			<li><strong>Removing non informative tags:</strong> At this point each tag gets an weight which takes into account the listeners, total playcount and the lastfm weight. Tags with a value below a certain threshold will be removed.
-		</ul>
-		
-		<img src="images/Algorithm.png" alt="Algorithm">
-		
-
-		<h3> Implementation </h3>
-		<img src="images/Overview.png" alt="Overview">
-    The current interface is the product of three Feedback-Refinment steps. The first step was the implementation and my own first steps with the inteface. After that i 
-    showed it to a colleague, got feedback and reworked the interface. The last step was another Feedback-Refinement step. </br></br>
-    <strong>Feedback:</strong>
-    <ul>
-      <li> I tried to use a heatmap as group representation. The feedback showed that the heatmap is hard to interpret and the users preferred a simple list.
-      <li> The naming of the parameters on the right side was the next big issue. For non-computer scientists was unclear how the [0,1] range works. Thats the reason i changed the parameters to percent. Which got far better feedback. This improved further after I changed the grouping strength visualization to percent.
-      <li> I changed the names of the parameters to improve the understandability.
-      <li> First i had no graph for the occurrences of the tags. This graph provides additional information for the user to improve his tag cloud interation.
-      <li> I removed the replaced words graph. The feedback was that it gives not that much information and clutters the interface.
-    </ul>
-
-    The two bar graphs show the distribution (as histrogram) of the occurrences and the weight over all tags. The overall feedback was very good and especially the tag cloud seems to be a good way of exploring a tag space.
-
-    <h3> Workflow </h3>
-    <strong> Step 1 - Exploration </strong>
-		<img src="images/explore.png" alt="Exploring">
-      The first step is the exploration of the current state (default at the beginning). The tag cloud provides information about the current tag space state. The two filter (by occurrence and weight) give the user control over what the cloud shows. He might search for all tags with a high weight. Or tags with a low occurrence and a high weight. Big tags occurring more often and dark green tags have a higher weight. The user has to decide if the current state is what he whats. </br> </br>
-    <strong> Step 2 - Parameter Adjustment</strong>
-    <img src="images/changing.png" alt="Changing">
-      The two bar charts give additional informations about occurrence and weight. The user might decide to decrease the filter threshold because their are too many tags filtered. From this point the user can change the parameters on the right side. The groups list gives information about all the groups sorted by their strength. Maybe he sees that "and roll" is grouped what is not really a group. Again he can change the group parameter accordingly to improve the tag quality. </br> </br>
-    <strong> Step 3 - Reflection</strong>
-    <img src="images/reflecting.png" alt="Reflecting">
-      Changing the parameters refreshes the tag cloud the the user can check the resulting tag cloud. Again the three lower plots give instant feedback how the overall state has changed. If that looks ok the user can explore the cloud further with the filters. From this point the user iterates through those three steps until the has a solution which suits his needs. </br> </br>
-
-		<h3> Implementation Tools and Languages</h3>
-		I am going to use Tableau and Java. My tools are Vim, Eclipse and Tableau. The reason I use this combination is that I can focus on the visualization and not on the implementation.
-		
-    <h3> Questions </h3>
-    <ul>
-      <li> Which information is needed to move through the tag space. Provide the three graphs enough information?
-      <li> Is the naming of the parameters clear?
-      <li> Is a list the best representation for the groups?
-    </ul>
-		
-		<h3> Milestones </h3>
-		<ul>
-      <li>Week 11: Creating the workbooks (Done)
-      <li>Week 12: Merging them into a dashboard and adding the global links/filter... (Done)
-      <li>Week 13: Reflecting colors, arrangement and chosen visualizations (Done)
-			<li>Week 14: M2 Presentation
-		</ul>
-		<ul>
-      <li>Week 15: Reflecting and implementing feedback from M2
-      <li>Week 16: Refinements
-			<li>Week 17: Final Presentation
-		</ul>
-		
-		</section>
-    </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
-
-    
-
-  </body>
+<!-- scripts -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="main.js"></script>
+</body>
 </html>
