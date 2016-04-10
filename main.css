@@ -52,6 +52,7 @@
 
 .start {
   position: relative;
+  left: 5%;
   top: 20%;
   margin-left: 30%;
   margin-right: 30%;
@@ -63,6 +64,19 @@
   border-left: 150px solid transparent;
   border-right: 150px solid transparent;
   border-bottom: 250px solid #272727;
+
+  transition: border-bottom .5s ease-in-out;
+
+  position: relative;
+  z-index: 1;
+}
+
+.triangle-up:hover {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 250px solid #006687;
 }
 
 .triangle-up-small {
@@ -71,6 +85,19 @@
   border-left: 48px solid transparent;
   border-right: 48px solid transparent;
   border-bottom: 80px solid #006687;
+
+  transition: border-bottom .5s ease-in-out;
+
+  position: relative;
+  z-index: 2;
+}
+
+.triangle-up-small:hover {
+  width: 0;
+  height: 0;
+  border-left: 48px solid transparent;
+  border-right: 48px solid transparent;
+  border-bottom: 80px solid #272727;
 }
 
 .triangle-down {
@@ -79,6 +106,19 @@
   border-left: 150px solid transparent;
   border-right: 150px solid transparent;
   border-top: 250px solid #272727;
+
+  transition: border-top .5s ease-in-out;
+
+  position: relative;
+  z-index: 1;
+}
+
+.triangle-down:hover {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 250px solid #006687;
 }
 
 .triangle-down-small {
@@ -87,4 +127,17 @@
   border-left: 48px solid transparent;
   border-right: 48px solid transparent;
   border-top: 80px solid #006687;
+
+  transition: border-top .5s ease-in-out;
+
+  position: relative;
+  z-index: 2;
+}
+
+.triangle-down-small:hover {
+  width: 0;
+  height: 0;
+  border-left: 48px solid transparent;
+  border-right: 48px solid transparent;
+  border-top: 80px solid #272727;
 }
