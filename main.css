@@ -49,3 +49,42 @@
   border-top-left-radius: 5px;
   position: absolute;
 }
+
+.start {
+  position: relative;
+  top: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 250px solid #272727;
+}
+
+.triangle-up-small {
+  width: 0;
+  height: 0;
+  border-left: 48px solid transparent;
+  border-right: 48px solid transparent;
+  border-bottom: 80px solid #006687;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 250px solid #272727;
+}
+
+.triangle-down-small {
+  width: 0;
+  height: 0;
+  border-left: 48px solid transparent;
+  border-right: 48px solid transparent;
+  border-top: 80px solid #006687;
+}
