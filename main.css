@@ -10,13 +10,11 @@
 }
 
 .main {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin: 0 auto;
 }
 
 .single {
-  margin-left: 20%;
-  margin-right: 20%;
+  margin: 0 auto;
 }
 
 .inner {
@@ -47,7 +45,6 @@
   border-left: 1px solid #ccc;
   border-top: 1px solid #ccc;
   border-top-left-radius: 5px;
-  position: absolute;
 }
 
 .start {
