@@ -79,6 +79,28 @@
   border-bottom: 250px solid #272727;
 }
 
+.triangle-up .symbol {
+  color: white;
+  position: relative;
+  top: 70px;
+  right: 18px;
+  font-size: xx-large;
+}
+
+.triangle-up .text {
+  color: white;
+  font-weight: 400;
+  font-size: x-large;
+  position: relative;
+  top: 190px;
+  right: 60px;
+}
+
+.triangle-up:hover .text {
+  text-decoration: underline;
+  text-decoration-color: white;
+}
+
 .triangle-up-small {
   width: 0;
   height: 0;
@@ -132,7 +154,7 @@
   transition: border-top .5s ease-in-out;
 
   position: relative;
-  z-index: 1;
+  z-index: 0;
 }
 
 .triangle-down:hover {
@@ -141,6 +163,28 @@
   border-left: 150px solid transparent;
   border-right: 150px solid transparent;
   border-top: 250px solid #272727;
+}
+
+.triangle-down .symbol {
+  color: white;
+  position: relative;
+  bottom: 140px;
+  right: 18px;
+  font-size: xx-large;
+}
+
+.triangle-down .text {
+  color: white;
+  font-weight: 400;
+  font-size: x-large;
+  position: relative;
+  bottom: 220px;
+  right: 55px;
+}
+
+.triangle-down:hover .text {
+  text-decoration: underline;
+  text-decoration-color: white;
 }
 
 .triangle-down-small {
