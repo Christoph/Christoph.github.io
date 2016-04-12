@@ -35,24 +35,42 @@
 
     <div class="col-sm-9 corner">
     <br>
+      <p><strong>TagRefinery</strong> is a research project hosted on <a href="https://github.com/Christoph/tagrefinery-releases">Github</a>. <br>
+      Download: <a href="https://github.com/Christoph/tagrefinery-releases/archive/master.zip">TagRefinery</a></p>
+      You need at least Java version <a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html">1.8</a> to use TagRefinery.
+      <hr>
+      <p>TagRefinery supports you in your task of cleaning and processing open tag spaces. A guided and step-by-step interface allows you to perform efficiently tasks such as spell-correction, multi-word tag detection, and word form consolidation, in a visually supported framework.</p>
+      <p>The default use case is a significant reduction of a huge vocabulary, without loosing too much information. The project <a href="http://dl.acm.org/citation.cfm?doid=2856767.2856780">TagFlip</a> used TagRefinery and reduced a dataset with initial <strong>500,000</strong> words full of noise to <strong>362</strong> meaningful words, while still keeping <strong>50%</strong> of their inital dataset size. This data is used in a music recommendation app.</p> 
+      <p>We are working currently on the expansion of TagRefinery to more use cases/fields.</p>
       <h3 class="anchor" id="section1">Workflow</h3>
       <img src="images/workflow.jpg" width=600px>
-
+      <p>This picture illustrates the workflow split into three bis steps and seven sub steps.</p>
+      <p>The <strong>Pre Filter</strong> step lets you reduce the total amount of words in the dataset by removing rare words. This is intended to reduce the computation time temporary until you have found good parameters in the following step.</p>
+      <p>The <strong>Spelling and Multi-words</strong> step provides you with the tools to consolidate word forms (<em>favorite, favourite, favourites,...)</em>), reduce spelling errors and find meaningful multi-word tags (<em>hard-rock, 3d-rendering, ...</em>). The spelling correction is language independed and gives you control what will be replaced. The multi-word detection is realised as a two step method using a frequency and a uniqueness measure.</p>
       <hr>
       <h3 class="anchor" id="section2">Data</h3>
+      <p>The first step is the data import. TagRefinery can import csv files with three columns (tag,item,weight).</p>
+      <p><strong>Tag</strong> is the actual tag you are interested in. This can be just one word or any number of words which are treated as one tag.</p>
+      <p><strong>Item</strong> is the item where the tag is attached to. This can be a song, movie or a puplication.</p>
+      <p><strong>Weight</strong> is a positive number which describes how important a distinct tag/item pair is. Here you might include additional meta information you have like ascore you have compuated or the number times a song was listened to. TagRefinery uses the weight to compute the <strong>word quality</strong> which describes the quality/importance of a certain word.</p>
       <img src="images/import.png" width=600px>
-
+      <p>This is the import view with the example dataset loaded.</p>
       <hr>
       <h3 class="anchor" id="section3">Guided Mode</h3>
+      <p>The <strong>Guided Mode</strong> supports you in the process of tag refinement by presenting the workflow step-by-step. This eases this complex tasks and reduces the mental load of the whole process. The following picture shows an example step. At the top is a progres bar which shows the current position in the whole process, below that is the question which needs a decision and in the bottom is a short description of the step. On the right side is a overview of all completed steps.</p>
       <img src="images/guided.png" width=600px>
+      <br>
+      <p>Another example step is the spell correction step, which is shown in the following picture. The left list shows all words sorted by there <strong>word quality</strong> and you can select which of those words should be treated as truth. For those selected words shows the right list all possible replacements with the corresponding similarity.</p>
       <img src="images/spell.png" width=600px>
 
       <hr>
       <h3 class="anchor" id="section4">Results</h3>
+      <p>After moving through all steps you end up with a cleaner set of tags which can be exported again as csv file.</p>
       <img src="images/result.png" width=600px>
 
       <hr>
       <h3 class="anchor" id="section5">Advanced</h3>
+      <p>Advanced user with background knowledge of natural language processing algorithms or advanced users can use the <strong>Advanced Mode</strong>. This mode provides all views from the guided mode and in addition more advanced parameters like characters to remove or the maximum number of words in a multi-word tag. This mode gives full control but should be used with care.</p>
       <img src="images/advanced.png" width=600px>
     </div>
   </div>
