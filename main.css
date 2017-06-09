@@ -2,11 +2,11 @@
   font-size: small;
   position: relative;
   top: 2px;
-  margin-left: 0; 
+  margin-left: 0;
 }
 
-.anchor { 
-  padding-top: 45px; 
+.anchor {
+  padding-top: 45px;
   margin-top: -45px;
   text-align: center;
 }
@@ -39,12 +39,10 @@
 }
 
 .vertMain {
-  position: absolute;
-  top: 45%;
-  left: 50%;
-  height: 374px;
-  width: 500px;
-  margin: -187px 0 0 -250px;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  width: 90%;
 }
 
 .navlist {
@@ -56,9 +54,62 @@
 }
 
 .cv-text {
-  width: 100px; 
+  width: 100px;
   display: inline-block;
   vertical-align: top;
+}
+
+.nodes path {
+    transition: fill 1s;
+}
+
+.nodes:hover .big {
+    fill: #053d4f !important;
+    animation-name: rotate;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.nodes:hover .small {
+    fill: #053d4f !important;
+    animation-name: rotateSmall;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotateSmall {
+    from {transform: rotate(60deg);}
+    to {transform: rotate(420deg);}
+}
+
+.nodes:hover text {
+    text-decoration: underline;
+    text-decoration-color: #272727;
+}
+
+.nodes text {
+    fill: white;
+    font-weight: 400;
+    font-size: small;
+}
+
+.nodes:hover .icon {
+    fill: white;
+    text-decoration: none;
+}
+
+.link {
+    fill: none;
+    stroke: #272727;
+    stroke-width: 1.5px;
 }
 
 .vl {
@@ -81,7 +132,7 @@
   border-right: 150px solid transparent;
   border-bottom: 250px solid #006687;
 
-  transition: border-bottom .5s ease-in-out; 
+  transition: border-bottom .5s ease-in-out;
 
   position: relative;
   z-index: 1;

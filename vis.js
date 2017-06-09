@@ -11,23 +11,33 @@ main()
 function main() {
    let projects = {
        nodes: [
-           {label: "About", r: 20},
-           {label: "Publications", r: 20},
-           {label: "TagRefinery", r: 50},
-           {label: "Scope", r: 50},
-           {label: "Contact", r: 20},
+           {label: "About", r: 100, icon: "\uf007", url: "about.html"},
+           {label: "Publications", r: 100, icon: "\uf0c3", url: "publications.html"},
+           {label: "TagRefinery", r: 160, icon: "\uf085", url: "http://tagrefinery.cs.univie.ac.at/"},
+           {label: "Scope", r: 160, icon: "\uf080", url: "http://scope.ai/"},
+           {label: "Contact", r: 100, icon: "\uf075", url: "contact.html"},
        ],
        links: [
            {"source": "0", "target": "1" },
-           {"source": "1", "target": "2" },
+           {"source": "1", "target": "4" },
+           {"source": "0", "target": "4" },
+           {"source": "0", "target": "2" },
+           {"source": "0", "target": "3" },
            {"source": "2", "target": "3" },
-           {"source": "3", "target": "4" },
+
        ]
    }
 
    console.log(projects)
    setSize(projects)
    drawChart(projects)
+}
+
+function linkArc(d) {
+  var dx = d.target.x - d.source.x,
+      dy = d.target.y - d.source.y,
+      dr = Math.sqrt(dx * dx + dy * dy);
+  return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
 }
 
 function setSize(data) {
@@ -50,51 +60,109 @@ function setSize(data) {
 
 function drawChart(data) {
    var simulation = d3.forceSimulation()
-       .force("link", d3.forceLink().id(function(d) { return d.index }))
+       .force("link", d3.forceLink().id(function(d) { return d.index }).distance(5).strength(0.9))
        .force("collide",d3.forceCollide( function(d){return d.r + 8 }).iterations(16) )
        .force("charge", d3.forceManyBody())
-       .force("center", d3.forceCenter(chartWidth / 2, chartWidth / 2))
+       .force("center", d3.forceCenter(chartWidth / 2, chartHeight / 2))
        .force("y", d3.forceY(0))
        .force("x", d3.forceX(0))
 
-   var link = svg.append("g")
-       .attr("class", "links")
-       .selectAll("line")
+   var link = svg
+       .selectAll(".link")
        .data(data.links)
-       .enter()
-       .append("line")
-       .attr("stroke", "black")
+       .enter().append("g")
+       .attr("class", "link")
+       .append("path");
 
-       var arc = d3.symbol()
-            .type(d3.symbolTriangle)
-            .size(function(d) {
-                return d.r;
-            });
+   var arc = d3.symbol()
+        .type(d3.symbolTriangle)
+        .size(function(d) {
+            return d.r * d.r;
+        });
 
-   var node = svg.append("g")
-       .attr("class", "nodes")
-       .selectAll("path")
+   var node = svg.selectAll(".nodes")
        .data(data.nodes)
-       .enter().append("path")
-       .attr("d", arc)
+       .enter().append("g")
+       .attr("class", "nodes")
        .call(d3.drag()
            .on("start", dragstarted)
            .on("drag", dragged)
            .on("end", dragended));
 
+    node.append("path")
+        .attr("transform", function(d) {
+            if(d.r == 160) {
+                d3.select(this)
+                    .attr("class", "big")
+                return "rotate(0)"
+            }
+            else {
+                d3.select(this)
+                    .attr("class", "small")
+                return "rotate(60)"
+            }
+        })
+        .style("fill",  function(d) {
+            if(d.r == 160) {
+                return "#006687"
+            }
+            else {
+                return "#80a8af"
+            }
+        })
+        .attr("d", arc);
+
+    node.append("a")
+    .attr("xlink:href",function(d) { return d.url })
+    .append("text")
+        .attr("text-anchor", "middle")
+        .attr("dy", function(d) {
+            if(d.r == 160) {
+                return 40
+            }
+            else {
+                return -15
+            }
+        })
+        .text(function(d) {
+            return d.label;
+        });
+
+    node.append("a")
+    .attr("class", "icon")
+    .attr("xlink:href",function(d) { return d.url })
+    .append('text')
+    .attr("class", "icon")
+        .attr("text-anchor", "middle")
+        .attr("dy", function(d) {
+            if(d.r == 160) {
+                return 10
+            }
+            else {
+                return 20
+            }
+        })
+       .attr('font-family', 'FontAwesome')
+       .style('font-size', function(d) {
+           if(d.r == 160) {
+               return "50px";
+           }
+           else {
+               return "30px"
+           }
+       })
+       .text(function(d) { return d.icon });
 
    var ticked = function() {
-       link
-           .attr("x1", function(d) { return d.source.x; })
-           .attr("y1", function(d) { return d.source.y; })
-           .attr("x2", function(d) { return d.target.x; })
-           .attr("y2", function(d) { return d.target.y; });
+       link.attr("d", linkArc)
+        //    .attr("x1", function(d) { return d.source.x; })
+        //    .attr("y1", function(d) { return d.source.y; })
+        //    .attr("x2", function(d) { return d.target.x; })
+        //    .attr("y2", function(d) { return d.target.y; });
 
        node
             .attr("transform", function(d) {
       return "translate(" + d.x + "," + d.y + ")"; });
-        //    .attr("cx", function(d) { return d.x; })
-        //    .attr("cy", function(d) { return d.y; });
    }
 
    simulation
