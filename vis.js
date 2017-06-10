@@ -132,7 +132,7 @@ function drawChart(data) {
     .attr("class", "icon")
     .attr("xlink:href",function(d) { return d.url })
     .append('text')
-    .attr("class", "icon")
+    .attr("class", "icon fa")
         .attr("text-anchor", "middle")
         .attr("dy", function(d) {
             if(d.r == 160) {
@@ -154,14 +154,9 @@ function drawChart(data) {
        .text(function(d) { return d.icon });
 
    var ticked = function() {
-       link.attr("d", linkArc)
-        //    .attr("x1", function(d) { return d.source.x; })
-        //    .attr("y1", function(d) { return d.source.y; })
-        //    .attr("x2", function(d) { return d.target.x; })
-        //    .attr("y2", function(d) { return d.target.y; });
+       link.attr("d", linkArc);
 
-       node
-            .attr("transform", function(d) {
+       node.attr("transform", function(d) {
       return "translate(" + d.x + "," + d.y + ")"; });
    }
 

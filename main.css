@@ -101,6 +101,11 @@
     font-size: small;
 }
 
+.nodes .icon {
+    fill: white;
+    text-decoration: none;
+}
+
 .nodes:hover .icon {
     fill: white;
     text-decoration: none;
