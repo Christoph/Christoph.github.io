@@ -28,7 +28,6 @@ function main() {
        ]
    }
 
-   console.log(projects)
    setSize(projects)
    drawChart(projects)
 }
