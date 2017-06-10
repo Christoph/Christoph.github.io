@@ -3,12 +3,13 @@
 var width,height
 var chartWidth, chartHeight
 var margin
-var svg = d3.select("#graph").append("svg")
-var chartLayer = svg.append("g").classed("chartLayer", true)
 
 main()
 
 function main() {
+    let svg = d3.select("#graph").append("svg")
+    let chartLayer = svg.append("g").classed("chartLayer", true)
+
    let projects = {
        nodes: [
            {label: "About", r: 100, icon: "\uf007", url: "about.html"},
@@ -28,8 +29,8 @@ function main() {
        ]
    }
 
-   setSize(projects)
-   drawChart(projects)
+   setSize(projects, svg, chartLayer)
+   drawChart(projects, svg)
 }
 
 function linkArc(d) {
@@ -39,7 +40,7 @@ function linkArc(d) {
   return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
 }
 
-function setSize(data) {
+function setSize(data, svg, chartLayer) {
    width = document.querySelector("#graph").clientWidth
    height = document.querySelector("#graph").clientHeight
 
@@ -57,7 +58,7 @@ function setSize(data) {
        .attr("transform", "translate("+[margin.left, margin.top]+")")
 }
 
-function drawChart(data) {
+function drawChart(data, svg) {
    var simulation = d3.forceSimulation()
        .force("link", d3.forceLink().id(function(d) { return d.index }).distance(5).strength(0.9))
        .force("collide",d3.forceCollide( function(d){return d.r + 8 }).iterations(16) )
