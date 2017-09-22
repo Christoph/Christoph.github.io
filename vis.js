@@ -17,7 +17,7 @@ function main() {
            {label: "TagRefinery", r: 160, icon: "\uf085", url: "http://tagrefinery.cs.univie.ac.at/"},
            {label: "Scope", r: 160, icon: "\uf080", url: "http://scope.ai/"},
            {label: "Contact", r: 100, icon: "\uf075", url: "contact.html"},
-           {label: "Improve", r: 160, icon: "\uf075", url: "https://christoph.github.io/improve/"},
+           {label: "Improve", r: 160, icon: "\uf080", url: "https://christoph.github.io/improve/"},
        ],
        links: [
            {"source": "0", "target": "1" },
