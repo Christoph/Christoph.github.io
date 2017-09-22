@@ -17,6 +17,7 @@ function main() {
            {label: "TagRefinery", r: 160, icon: "\uf085", url: "http://tagrefinery.cs.univie.ac.at/"},
            {label: "Scope", r: 160, icon: "\uf080", url: "http://scope.ai/"},
            {label: "Contact", r: 100, icon: "\uf075", url: "contact.html"},
+           {label: "Improve", r: 160, icon: "\uf075", url: "https://christoph.github.io/improve/"},
        ],
        links: [
            {"source": "0", "target": "1" },
@@ -25,7 +26,8 @@ function main() {
            {"source": "0", "target": "2" },
            {"source": "0", "target": "3" },
            {"source": "2", "target": "3" },
-
+           {"source": "2", "target": "5" },
+           {"source": "3", "target": "5" },
        ]
    }
 
