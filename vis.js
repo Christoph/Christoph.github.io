@@ -18,6 +18,7 @@ function main() {
            {label: "Scope", r: 160, icon: "\uf080", url: "http://scope.ai/"},
            {label: "Contact", r: 100, icon: "\uf075", url: "contact.html"},
            {label: "Improve", r: 160, icon: "\uf080", url: "https://christoph.github.io/improve/"},
+           {label: "Sheeplworld", r: 130, icon: "\uf0ac", url: "https://christoph.github.io/sheeplworld/"},
        ],
        links: [
            {"source": "0", "target": "1" },
@@ -28,6 +29,7 @@ function main() {
            {"source": "2", "target": "3" },
            {"source": "2", "target": "5" },
            {"source": "3", "target": "5" },
+           {"source": "0", "target": "6" },
        ]
    }
 
