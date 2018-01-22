@@ -29,7 +29,6 @@ function main() {
            {"source": "2", "target": "3" },
            {"source": "2", "target": "5" },
            {"source": "3", "target": "5" },
-           {"source": "0", "target": "6" },
        ]
    }
 
