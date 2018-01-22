@@ -17,8 +17,8 @@ function main() {
            {label: "TagRefinery", r: 160, icon: "\uf085", url: "http://tagrefinery.cs.univie.ac.at/"},
            {label: "Scope", r: 160, icon: "\uf080", url: "http://scope.ai/"},
            {label: "Contact", r: 100, icon: "\uf075", url: "contact.html"},
-           {label: "Improve", r: 160, icon: "\uf080", url: "https://christoph.github.io/improve/"},
-           {label: "Sheeplworld", r: 130, icon: "\uf0ac", url: "https://christoph.github.io/sheeplworld/"},
+           {label: "Blackbox Viewer", r: 160, icon: "\uf002", url: "https://christoph.github.io/blackbox_viewer/"},
+           //{label: "Sheeplworld", r: 130, icon: "\uf0ac", url: "https://christoph.github.io/sheeplworld/"},
        ],
        links: [
            {"source": "0", "target": "1" },
