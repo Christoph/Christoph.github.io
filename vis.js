@@ -12,12 +12,12 @@ function main() {
 
    let projects = {
        nodes: [
-           {label: "About", r: 100, icon: "fas fa-user", url: "about.html"},
+           {label: "About", r: 100, icon: "far fa-user", url: "about.html"},
            {label: "Publications", r: 100, icon: "fas fa-flask", url: "publications.html"},
            {label: "Teaching", r: 100, icon: "fas fa-university", url: "teaching.html"},
-           {label: "Contact", r: 100, icon: "fas fa-comment", url: "contact.html"},
+           {label: "Contact", r: 100, icon: "far fa-envelope", url: "contact.html"},
            {label: "TagRefinery", r: 160, icon: "fas fa-cogs", url: "http://tagrefinery.cs.univie.ac.at/"},
-           {label: "Scope", r: 160, icon: "fas fa-chart-bar", url: "http://scope.ai/"},
+           {label: "Scope", r: 160, icon: "far fa-chart-bar", url: "http://scope.ai/"},
            {label: "Blackbox Viewer", r: 160, icon: "fas fa-search", url: "https://christoph.github.io/blackbox_viewer/"},
        ],
        links: [
@@ -90,38 +90,58 @@ function drawChart(data, svg) {
        .call(d3.drag()
            .on("start", dragstarted)
            .on("drag", dragged)
-           .on("end", dragended));
+           .on("end", dragended))
 
-    node.append("path")
-        .attr("transform", function(d) {
-            if(d.r == 160) {
-                d3.select(this)
-                    .attr("class", "big")
-                return "rotate(0)"
-            }
-            else {
-                d3.select(this)
-                    .attr("class", "small")
-                return "rotate(60)"
-            }
-        })
-        .style("fill",  function(d) {
-            if(d.r == 160) {
-                return "#006687"
-            }
-            else {
-                return "#80a8af"
-            }
-        })
-        .attr("d", arc);
+      node.append("svg:image")
+          .attr("xlink:href",  function(d) { return "images/triangle.png";})
+            .attr("x", function(d) { return -25;})
+            .attr("y", function(d) { return -25;})
+            .attr("height", 100)
+            .attr("width", 100)
+            .attr("transform", function(d) {
+                if(d.r == 160) {
+                    d3.select(this)
+                        .attr("class", "big")
+                    return "rotate(0) scale(2.5) translate(-25, -35)"
+                }
+                else {
+                    d3.select(this)
+                        .attr("class", "small")
+                    return "rotate(60) scale(1.5) translate(-30, -35)"
+                }
+            })
+            .on("mouseover", function(d) {
+                 d3.select(this).style("cursor", "pointer");
+                 if(d.r == 160) {
+                   d3.select(this).transition().attr("transform", "rotate(60) scale(2.8) translate(-25, -32)")
+                 }
+                 else {
+                   d3.select(this).transition().attr("transform", "rotate(0) scale(2) translate(-27, -38)")
+                 }
+             })
+           .on("mouseout", function(d) {
+                d3.select(this).style("cursor", "default");
+                if(d.r == 160) {
+                  d3.select(this).transition().attr("transform", "rotate(0) scale(2.5) translate(-25, -35)")
+                }
+                else {
+                  d3.select(this).transition().attr("transform", "rotate(60) scale(1.5) translate(-30, -35)")
+                }
+            })
+            .on("click", function(d) {
+                location.href=d.url
+            })
+
 
     node.append("a")
-    .on("mouseover", function(d) {
-         d3.select(this).style("cursor", "pointer");
-     })
-     .on("mouseout", function(d) {
-          d3.select(this).style("cursor", "default");
-      })
+    .attr("class",  function(d) {
+        if(d.r == 160) {
+            return "big"
+        }
+        else {
+            return "small"
+        }
+    })
     .attr("xlink:href",function(d) { return d.url })
     .append("text")
         .attr("text-anchor", "middle")
@@ -140,12 +160,6 @@ function drawChart(data, svg) {
     node
     .append("a")
     .attr("width", 100)
-    .on("mouseover", function(d) {
-         d3.select(this).style("cursor", "pointer");
-     })
-     .on("mouseout", function(d) {
-          d3.select(this).style("cursor", "default");
-      })
     .attr("class", "icon")
     .attr("xlink:href",function(d) { return d.url })
     .append('i')
@@ -156,7 +170,7 @@ function drawChart(data, svg) {
             return -25
         }
         else {
-            return -17.5
+            return -16
         }
     })
     .attr("y", function(d) {
@@ -164,23 +178,23 @@ function drawChart(data, svg) {
             return -30
         }
         else {
-            return -12
+            return -8
         }
     })
     .attr("height", function(d) {
         if(d.r == 160) {
-            return 50
+            return 40
         }
         else {
-            return 35
+            return 25
         }
     })
     .attr("width", function(d) {
         if(d.r == 160) {
-            return 50
+            return 40
         }
         else {
-            return 35
+            return 25
         }
     })
 
