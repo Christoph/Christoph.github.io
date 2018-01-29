@@ -12,23 +12,23 @@ function main() {
 
    let projects = {
        nodes: [
-           {label: "About", r: 100, icon: "\uf007", url: "about.html"},
-           {label: "Publications", r: 100, icon: "\uf0c3", url: "publications.html"},
-           {label: "TagRefinery", r: 160, icon: "\uf085", url: "http://tagrefinery.cs.univie.ac.at/"},
-           {label: "Scope", r: 160, icon: "\uf080", url: "http://scope.ai/"},
-           {label: "Contact", r: 100, icon: "\uf075", url: "contact.html"},
-           {label: "Blackbox Viewer", r: 160, icon: "\uf002", url: "https://christoph.github.io/blackbox_viewer/"},
-           //{label: "Sheeplworld", r: 130, icon: "\uf0ac", url: "https://christoph.github.io/sheeplworld/"},
+           {label: "About", r: 100, icon: "fas fa-user", url: "about.html"},
+           {label: "Publications", r: 100, icon: "fas fa-flask", url: "publications.html"},
+           {label: "Teaching", r: 100, icon: "fas fa-university", url: "teaching.html"},
+           {label: "Contact", r: 100, icon: "fas fa-comment", url: "contact.html"},
+           {label: "TagRefinery", r: 160, icon: "fas fa-cogs", url: "http://tagrefinery.cs.univie.ac.at/"},
+           {label: "Scope", r: 160, icon: "fas fa-chart-bar", url: "http://scope.ai/"},
+           {label: "Blackbox Viewer", r: 160, icon: "fas fa-search", url: "https://christoph.github.io/blackbox_viewer/"},
        ],
        links: [
            {"source": "0", "target": "1" },
-           {"source": "1", "target": "4" },
-           {"source": "0", "target": "4" },
-           {"source": "0", "target": "2" },
-           {"source": "0", "target": "3" },
+           {"source": "1", "target": "2" },
            {"source": "2", "target": "3" },
-           {"source": "2", "target": "5" },
-           {"source": "3", "target": "5" },
+           {"source": "3", "target": "0" },
+           {"source": "0", "target": "4" },
+           {"source": "4", "target": "5" },
+           {"source": "5", "target": "6" },
+           {"source": "6", "target": "4" },
        ]
    }
 
@@ -116,6 +116,12 @@ function drawChart(data, svg) {
         .attr("d", arc);
 
     node.append("a")
+    .on("mouseover", function(d) {
+         d3.select(this).style("cursor", "pointer");
+     })
+     .on("mouseout", function(d) {
+          d3.select(this).style("cursor", "default");
+      })
     .attr("xlink:href",function(d) { return d.url })
     .append("text")
         .attr("text-anchor", "middle")
@@ -131,30 +137,52 @@ function drawChart(data, svg) {
             return d.label;
         });
 
-    node.append("a")
+    node
+    .append("a")
+    .attr("width", 100)
+    .on("mouseover", function(d) {
+         d3.select(this).style("cursor", "pointer");
+     })
+     .on("mouseout", function(d) {
+          d3.select(this).style("cursor", "default");
+      })
     .attr("class", "icon")
     .attr("xlink:href",function(d) { return d.url })
-    .append('text')
-    .attr("class", "icon fa")
-        .attr("text-anchor", "middle")
-        .attr("dy", function(d) {
-            if(d.r == 160) {
-                return 10
-            }
-            else {
-                return 20
-            }
-        })
-       .attr('font-family', 'FontAwesome')
-       .style('font-size', function(d) {
-           if(d.r == 160) {
-               return "50px";
-           }
-           else {
-               return "30px"
-           }
-       })
-       .text(function(d) { return d.icon });
+    .append('i')
+    .attr("fill", "white")
+    .attr("class", function(d) { return d.icon })
+    .attr("x", function(d) {
+        if(d.r == 160) {
+            return -25
+        }
+        else {
+            return -17.5
+        }
+    })
+    .attr("y", function(d) {
+        if(d.r == 160) {
+            return -25
+        }
+        else {
+            return -12
+        }
+    })
+    .attr("height", function(d) {
+        if(d.r == 160) {
+            return 50
+        }
+        else {
+            return 35
+        }
+    })
+    .attr("width", function(d) {
+        if(d.r == 160) {
+            return 50
+        }
+        else {
+            return 35
+        }
+    })
 
    var ticked = function() {
        link.attr("d", linkArc);
