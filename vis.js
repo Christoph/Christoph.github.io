@@ -161,7 +161,7 @@ function drawChart(data, svg) {
     })
     .attr("y", function(d) {
         if(d.r == 160) {
-            return -25
+            return -30
         }
         else {
             return -12
