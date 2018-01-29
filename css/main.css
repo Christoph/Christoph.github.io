@@ -6,6 +6,20 @@ body {
     font-family: 'Open Sans', sans-serif
 }
 
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: #A9E5BB;
+}
+
+.background {
+  margin-top: -60px;
+  position: absolute;
+  /* z-index: -1; */
+  overflow: hidden;
+  text-align: left;
+}
+
 .small {
   font-size: small;
   position: relative;
@@ -50,7 +64,7 @@ body {
   display: inline-block;
   position: relative;
   height: 100%;
-  width: 90%;
+  width: 100%;
 }
 
 .navlist {
@@ -71,11 +85,6 @@ body {
     transition: fill 1s;
 }
 
-.nodes:hover text {
-    text-decoration: underline;
-    text-decoration-color: #272727;
-}
-
 .nodes text {
     fill: white;
     font-weight: 400;
@@ -84,17 +93,23 @@ body {
 }
 
 .nodes a.big text {
-    font-size: large;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.nodes a.small text {
+    font-size: medium;
+    font-weight: 700;
 }
 
 .nodes .icon {
-    color: white;
+    color: #A9E5BB;
     text-decoration: none;
     pointer-events: none;
 }
 
 .nodes:hover .icon {
-    fill: white;
+    fill: black;
     text-decoration: none;
 }
 

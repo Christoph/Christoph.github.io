@@ -12,10 +12,10 @@ function main() {
 
    let projects = {
        nodes: [
-           {label: "About", r: 100, icon: "far fa-user", url: "about.html"},
-           {label: "Publications", r: 100, icon: "fas fa-flask", url: "publications.html"},
-           {label: "Teaching", r: 100, icon: "fas fa-university", url: "teaching.html"},
-           {label: "Contact", r: 100, icon: "far fa-envelope", url: "contact.html"},
+           {label: "About", r: 100, icon: "far fa-address-card", url: "about.html"},
+           {label: "Publications", r: 100, icon: "far fa-file-alt", url: "publications.html"},
+           {label: "Teaching", r: 100, icon: "fas fa-users", url: "teaching.html"},
+           // {label: "Contact", r: 100, icon: "far fa-envelope", url: "contact.html"},
            {label: "TagRefinery", r: 160, icon: "fas fa-cogs", url: "http://tagrefinery.cs.univie.ac.at/"},
            {label: "Scope", r: 160, icon: "far fa-chart-bar", url: "http://scope.ai/"},
            {label: "Blackbox Viewer", r: 160, icon: "fas fa-search", url: "https://christoph.github.io/blackbox_viewer/"},
@@ -23,12 +23,12 @@ function main() {
        links: [
            {"source": "0", "target": "1" },
            {"source": "1", "target": "2" },
-           {"source": "2", "target": "3" },
-           {"source": "3", "target": "0" },
-           {"source": "0", "target": "4" },
+           {"source": "2", "target": "0" },
+           // {"source": "3", "target": "0" },
+           {"source": "0", "target": "3" },
+           {"source": "3", "target": "4" },
            {"source": "4", "target": "5" },
-           {"source": "5", "target": "6" },
-           {"source": "6", "target": "4" },
+           {"source": "5", "target": "3" },
        ]
    }
 
@@ -44,8 +44,8 @@ function linkArc(d) {
 }
 
 function setSize(data, svg, chartLayer) {
-   width = document.querySelector("#graph").clientWidth
-   height = document.querySelector("#graph").clientHeight
+   width = document.querySelector("#main").clientWidth
+   height = document.querySelector("#main").clientHeight
 
    margin = {top:0, left:0, bottom:0, right:0 }
 
@@ -102,18 +102,18 @@ function drawChart(data, svg) {
                 if(d.r == 160) {
                     d3.select(this)
                         .attr("class", "big")
-                    return "rotate(0) scale(2.5) translate(-25, -35)"
+                    return "rotate(0) scale(3.2) translate(-25, -35)"
                 }
                 else {
                     d3.select(this)
                         .attr("class", "small")
-                    return "rotate(60) scale(1.5) translate(-30, -35)"
+                    return "rotate(60) scale(2.2) translate(-30, -35)"
                 }
             })
             .on("mouseover", function(d) {
                  d3.select(this).style("cursor", "pointer");
                  if(d.r == 160) {
-                   d3.select(this).transition().attr("transform", "rotate(60) scale(2.8) translate(-25, -32)")
+                   d3.select(this).transition().attr("transform", "rotate(60) scale(3) translate(-25, -32)")
                  }
                  else {
                    d3.select(this).transition().attr("transform", "rotate(0) scale(2) translate(-27, -38)")
@@ -122,10 +122,10 @@ function drawChart(data, svg) {
            .on("mouseout", function(d) {
                 d3.select(this).style("cursor", "default");
                 if(d.r == 160) {
-                  d3.select(this).transition().attr("transform", "rotate(0) scale(2.5) translate(-25, -35)")
+                  d3.select(this).transition().attr("transform", "rotate(0) scale(3.2) translate(-25, -35)")
                 }
                 else {
-                  d3.select(this).transition().attr("transform", "rotate(60) scale(1.5) translate(-30, -35)")
+                  d3.select(this).transition().attr("transform", "rotate(60) scale(2.2) translate(-30, -35)")
                 }
             })
             .on("click", function(d) {
@@ -175,26 +175,26 @@ function drawChart(data, svg) {
     })
     .attr("y", function(d) {
         if(d.r == 160) {
-            return -30
+            return -42
         }
         else {
-            return -8
+            return -6
         }
     })
     .attr("height", function(d) {
         if(d.r == 160) {
-            return 40
+            return 60
         }
         else {
-            return 25
+            return 30
         }
     })
     .attr("width", function(d) {
         if(d.r == 160) {
-            return 40
+            return 60
         }
         else {
-            return 25
+            return 30
         }
     })
 
