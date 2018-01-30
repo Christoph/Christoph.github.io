@@ -97,7 +97,7 @@ a.social-buttons {
 }
 
 .contact-side a.social-buttons {
-  color: #FCF6B1;
+  color: white;
   z-index:10;
 }
 
@@ -148,21 +148,16 @@ a.social-buttons:hover {
   position: relative;
   z-index: 1;
   height: 95vh;
-  /* width: 80vw; */
 }
 
-/* .navlist {
-  width: 100px;
-  text-align: right;
-  position: relative;
-  right: 40px;
-  display: inline-block;
-} */
-
-a.publication {
-  color: #2D1E2F;
+a.page-link {
+  color: white;
   font-size: medium;
   font-weight: 700;
+}
+
+a.page-link:hover {
+  color: #2D1E2F;
 }
 
 .text-general {
