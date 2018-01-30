@@ -2,28 +2,58 @@
 https://coolors.co/ddd201-90a583-9d8420-942911-593837
 https://coolors.co/ddd201-eaf8bf-006992-27476e-001d4a  */
 
-body {
-    font-family: 'Open Sans', sans-serif
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #A9E5BB;
 }
 
-html, body {
-    margin: 0;
-    height: 100%;
-    background-color: #A9E5BB;
+.main {
+  margin: 0 auto;
+  height: 99vh;
+  width: 98vw;
+  text-align: center;
+  position: relative;
+  z-index: -1;
 }
 
 .background {
   margin-top: -60px;
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   overflow: hidden;
   text-align: left;
+}
+
+.background h1 {
+  color: white;
+  font-size: 30vh;
+}
+
+.background h2 {
+  color: white;
+  font-size: 7vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+
+.background h2:hover {
+  color: #2D1E2F;
+}
+
+h1.top {
+  margin-bottom: 0px
+}
+
+h1.bottom {
+  margin-top: -80px
 }
 
 .contact {
   position: absolute;
   z-index: 2;
-  right: 0px;
+  right: 20px;
 }
 
 a.social-buttons {
@@ -52,10 +82,6 @@ a.social-buttons:hover {
   text-decoration: underline;
 }
 
-.main {
-  margin: 0 auto;
-}
-
 .single {
   margin: 0 auto;
 }
@@ -78,17 +104,18 @@ a.social-buttons:hover {
 .vertMain {
   display: inline-block;
   position: relative;
-  height: 100%;
-  width: 100%;
+  z-index: 1;
+  height: 95vh;
+  /* width: 80vw; */
 }
 
-.navlist {
+/* .navlist {
   width: 100px;
   text-align: right;
   position: relative;
   right: 40px;
   display: inline-block;
-}
+} */
 
 .cv-text {
   width: 100px;
