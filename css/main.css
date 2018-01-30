@@ -30,6 +30,34 @@ html, body {
   font-size: 30vh;
 }
 
+.background-smooth h1.top {
+  margin-bottom: 0px;
+  color: #FCF6B1;
+  font-size: 30vh;
+}
+
+.background-smooth h1.bottom {
+  margin-top: -80px;
+  color: #FCF6B1;
+  font-size: 30vh;
+}
+
+.background-smooth {
+  margin-top: -120px;
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
+  text-align: left;
+}
+
+.background-smooth h2 {
+  color: #FCF6B1;
+  font-size: 7vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 15px;
+}
+
 .background h2 {
   color: white;
   font-size: 7vh;
@@ -56,14 +84,28 @@ h1.bottom {
   right: 20px;
 }
 
+.contact-side {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  top: 0px;
+}
+
 a.social-buttons {
   color: white;
   z-index:10;
 }
 
+.contact-side a.social-buttons {
+  color: #FCF6B1;
+  z-index:10;
+}
+
 a.social-buttons:hover {
   color: #2D1E2F;
+  z-index:10;
 }
+
 
 .small {
   font-size: small;
@@ -78,9 +120,9 @@ a.social-buttons:hover {
   text-align: center;
 }
 
-.back:hover {
+/* .back:hover {
   text-decoration: underline;
-}
+} */
 
 .single {
   margin: 0 auto;
@@ -116,6 +158,18 @@ a.social-buttons:hover {
   right: 40px;
   display: inline-block;
 } */
+
+a.publication {
+  color: #2D1E2F;
+  font-size: medium;
+  font-weight: 700;
+}
+
+.text-general {
+  color: #2D1E2F;
+  font-size: medium;
+  font-weight: 700;
+}
 
 .cv-text {
   width: 100px;
@@ -162,13 +216,20 @@ a.social-buttons:hover {
 }
 
 .vl {
-  border-left: 1px solid #ccc;
+  border-left: 1px solid black;
   left: -5px;
   position: absolute;
 }
 
+.side-title {
+  text-align: center;
+  margin-top: 60px;
+  font-size: 5vh;
+}
+
 .corner {
-  border-left: 1px solid #ccc;
-  border-top: 1px solid #ccc;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
   border-top-left-radius: 5px;
+  background-color: #A9E5BB;
 }
