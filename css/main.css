@@ -15,9 +15,24 @@ html, body {
 .background {
   margin-top: -60px;
   position: absolute;
-  /* z-index: -1; */
+  z-index: -1;
   overflow: hidden;
   text-align: left;
+}
+
+.contact {
+  position: absolute;
+  z-index: 2;
+  right: 0px;
+}
+
+a.social-buttons {
+  color: white;
+  z-index:10;
+}
+
+a.social-buttons:hover {
+  color: #2D1E2F;
 }
 
 .small {

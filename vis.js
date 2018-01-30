@@ -12,13 +12,13 @@ function main() {
 
    let projects = {
        nodes: [
-           {label: "About", r: 100, icon: "far fa-address-card", url: "about.html"},
-           {label: "Publications", r: 100, icon: "far fa-file-alt", url: "publications.html"},
-           {label: "Teaching", r: 100, icon: "fas fa-users", url: "teaching.html"},
+           {label: "About", r: 100, icon: "fal fa-address-card", url: "about.html"},
+           {label: "Publications", r: 100, icon: "fal fa-file-alt", url: "publications.html"},
+           {label: "Teaching", r: 100, icon: "fal fa-users", url: "teaching.html"},
            // {label: "Contact", r: 100, icon: "far fa-envelope", url: "contact.html"},
-           {label: "TagRefinery", r: 160, icon: "fas fa-cogs", url: "http://tagrefinery.cs.univie.ac.at/"},
-           {label: "Scope", r: 160, icon: "far fa-chart-bar", url: "http://scope.ai/"},
-           {label: "Blackbox Viewer", r: 160, icon: "fas fa-search", url: "https://christoph.github.io/blackbox_viewer/"},
+           {label: "TagRefinery", r: 160, icon: "fal fa-cogs", url: "http://tagrefinery.cs.univie.ac.at/"},
+           {label: "Scope", r: 160, icon: "fal fa-chart-bar", url: "http://scope.ai/"},
+           {label: "Blackbox Viewer", r: 160, icon: "fal fa-search", url: "https://christoph.github.io/blackbox_viewer/"},
        ],
        links: [
            {"source": "0", "target": "1" },
