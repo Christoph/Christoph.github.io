@@ -32,18 +32,18 @@ html, body {
 
 .background-smooth h1.top {
   margin-bottom: 0px;
-  color: #FCF6B1;
+  color: #C0ECCD;
   font-size: 30vh;
 }
 
 .background-smooth h1.bottom {
   margin-top: -80px;
-  color: #FCF6B1;
+  color: #C0ECCD;
   font-size: 30vh;
 }
 
 .background-smooth {
-  margin-top: -120px;
+  margin-top: -80px;
   position: absolute;
   z-index: 0;
   overflow: hidden;
@@ -51,7 +51,7 @@ html, body {
 }
 
 .background-smooth h2 {
-  color: #FCF6B1;
+  color: #C0ECCD;
   font-size: 7vh;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -163,13 +163,27 @@ a.page-link:hover {
 .text-general {
   color: #2D1E2F;
   font-size: medium;
-  font-weight: 700;
+  font-weight: 500;
+}
+
+.text-fat {
+  color: #2D1E2F;
+  font-size: medium;
+  font-weight: bold;
 }
 
 .cv-text {
   width: 100px;
   display: inline-block;
   vertical-align: top;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+.cv-general {
+  display: inline-block;
+  font-weight: normal;
+  margin-bottom: 5px;
 }
 
 .nodes path {
@@ -218,13 +232,14 @@ a.page-link:hover {
 
 .side-title {
   text-align: center;
-  margin-top: 60px;
+  color: white;
+  padding-top: 9.5vh;
   font-size: 5vh;
 }
 
 .corner {
-  border-left: 1px solid black;
-  border-top: 1px solid black;
-  border-top-left-radius: 5px;
-  background-color: #A9E5BB;
+  /* border-left: 12px solid white;
+  border-top: 12px solid white;
+  border-top-left-radius: 0px;
+  background-color: #A9E5BB; */
 }

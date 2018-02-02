@@ -49,12 +49,11 @@ function setSize(data, svg, chartLayer) {
 
    margin = {top:0, left:0, bottom:0, right:0 }
 
-
    chartWidth = width - (margin.left+margin.right)
    chartHeight = height - (margin.top+margin.bottom)
 
    svg.attr("width", width).attr("height", height)
-
+   console.log(svg)
    chartLayer
        .attr("width", chartWidth)
        .attr("height", chartHeight)
