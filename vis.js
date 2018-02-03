@@ -53,7 +53,6 @@ function setSize(data, svg, chartLayer) {
    chartHeight = height - (margin.top+margin.bottom)
 
    svg.attr("width", width).attr("height", height)
-   console.log(svg)
    chartLayer
        .attr("width", chartWidth)
        .attr("height", chartHeight)
@@ -62,7 +61,7 @@ function setSize(data, svg, chartLayer) {
 
 function drawChart(data, svg) {
    var simulation = d3.forceSimulation()
-       .force("link", d3.forceLink().id(function(d) { return d.index }).distance(5).strength(0.9))
+       .force("link", d3.forceLink().id(function(d) { return d.index }).distance(5).strength(0.8))
        .force("collide",d3.forceCollide( function(d){return d.r + 8 }).iterations(16) )
        .force("charge", d3.forceManyBody())
        .force("center", d3.forceCenter(chartWidth / 2, chartHeight / 2))
@@ -113,18 +112,22 @@ function drawChart(data, svg) {
                  d3.select(this).style("cursor", "pointer");
                  if(d.r == 160) {
                    d3.select(this).transition().attr("transform", "rotate(60) scale(3) translate(-25, -32)")
+                   d3.select(d3.select(this).node().parentNode).selectAll("text").transition().style("fill", "black")
                  }
                  else {
                    d3.select(this).transition().attr("transform", "rotate(0) scale(2) translate(-27, -38)")
+                   d3.select(d3.select(this).node().parentNode).selectAll("text").transition().style("fill", "black")
                  }
              })
            .on("mouseout", function(d) {
                 d3.select(this).style("cursor", "default");
                 if(d.r == 160) {
                   d3.select(this).transition().attr("transform", "rotate(0) scale(3.2) translate(-25, -35)")
+                  d3.select(d3.select(this).node().parentNode).selectAll("text").transition().style("fill", "white")
                 }
                 else {
                   d3.select(this).transition().attr("transform", "rotate(60) scale(2.2) translate(-30, -35)")
+                  d3.select(d3.select(this).node().parentNode).selectAll("text").transition().style("fill", "white")
                 }
             })
             .on("click", function(d) {
