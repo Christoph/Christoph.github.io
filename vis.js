@@ -17,7 +17,7 @@ function main() {
            {label: "Teaching", r: 100, icon: "fal fa-users", url: "teaching.html"},
            // {label: "Contact", r: 100, icon: "far fa-envelope", url: "contact.html"},
            {label: "TagRefinery", r: 160, icon: "fal fa-cogs", url: "http://tagrefinery.cs.univie.ac.at/"},
-           {label: "Scope", r: 160, icon: "fal fa-chart-bar", url: "http://scope.ai/"},
+           {label: "Scope", r: 160, icon: "fal fa-chart-bar", url: "https://github.com/Christoph/scope"},
            {label: "Blackbox Viewer", r: 160, icon: "fal fa-search", url: "https://christoph.github.io/blackbox_viewer/"},
        ],
        links: [
