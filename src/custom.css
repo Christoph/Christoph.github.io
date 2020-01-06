@@ -58,7 +58,6 @@
   /* width: 14vw; */
   width: auto;
 
-  padding: 10px 5px 10px 20px;
 
   background-color: #F3EFF5;
 
@@ -124,7 +123,7 @@
   }
 
   .first-entry {
-    margin-top: 22vh;
+    margin-top: 30vh;
   }
 
   .content-title {
@@ -142,7 +141,8 @@
   }
 
   .side-position {
-    top: 48vh;
+    top: 55vh;
+    padding: 10px 5px 10px 20px;
   }
 
   .side-title {
@@ -179,6 +179,7 @@
 
   .side-position {
     top: 28vh;
+    padding: 10px 2px 10px 20px;
   }
 
   .side-title {
