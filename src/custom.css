@@ -22,11 +22,6 @@
   width: 100vw;
 }
 
-.social-buttons {
-  color: #2589BD;
-  font-size: 4vh;
-}
-
 .social-buttons:hover {
   color: #0C4767;
 }
@@ -89,10 +84,6 @@
   -o-box-shadow: 10px 10px rgba(0, 0, 0, 0.6);
 }
 
-.content-body {
-  margin: 0 10px 0 10px;
-}
-
 .content-header {
   background-color: #0C4767;
   margin: 0;
@@ -129,14 +120,92 @@
 
 .cv {
   font-weight: 800;
-  font-size: 3vh;
+  font-size: 0.8em;
   letter-spacing: -2px;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 1601px) {
+  .content-body {
+    margin: 0 10px 0 10px;
+    font-size: 3em;
+  }
+
+  .ground-first1 {
+    font-size: 16.3em;
+    font-weight: 300;
+    color: #0C4767;
+    line-height: 1;
+  }
+
+  .ground-first2 {
+    color: #F3EFF5;
+    font-size: 16.3em;
+    font-weight: 500;
+  }
+
   .ground-second {
     color: #F3EFF5;
-    font-size: 3vw;
+    font-size: 6.5em;
+    line-height: 1.1
+  }
+
+  .first-entry {
+    margin-top: 20vh;
+  }
+
+  .content-title {
+    font-size: 4em;
+    font-weight: 300;
+    margin: 0 10px 0 10px;
+  }
+
+  .side-entry {
+    display: inline;
+    font-size: 3.5em;
+  }
+
+  .side-icon {
+    font-size: 4em;
+  }
+
+  .side-position {
+    top: 40vh;
+    padding: 10px 5px 10px 20px;
+  }
+
+  .side-title {
+    margin-left: 5px;
+    font-size: 3.5em;
+  }
+
+  .social-buttons {
+    color: #2589BD;
+    font-size: 4em;
+  }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 1600px) {
+  .content-body {
+    margin: 0 10px 0 10px;
+  }
+
+  .ground-first1 {
+    font-size: 8.15em;
+    font-weight: 300;
+    color: #0C4767;
+    line-height: 1;
+  }
+
+  .ground-first2 {
+    color: #F3EFF5;
+    font-size: 8.15em;
+    font-weight: 500;
+  }
+
+  .ground-second {
+    color: #F3EFF5;
+    font-size: 2.75em;
     line-height: 1.1
   }
 
@@ -145,46 +214,67 @@
   }
 
   .content-title {
-    font-size: 5vw;
+    font-size: 4em;
     font-weight: 300;
     margin: 0 10px 0 10px;
   }
 
   .side-entry {
     display: inline;
-    font-size: 3vh;
+    font-size: 1.5em;
   }
 
   .side-icon {
-    font-size: 4vh;
+    font-size: 2em;
   }
 
   .side-position {
-    top: 54vh;
+    top: 50vh;
     padding: 10px 5px 10px 20px;
   }
 
   .side-title {
     margin-left: 5px;
-    font-size: 3vh;
+    font-size: 1.5em;
   }
 
+  .social-buttons {
+    color: #2589BD;
+    font-size: 2em;
+  }
 }
 
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (max-width: 600px) {
+  .content-body {
+    margin: 0 10px 0 10px;
+  }
+
+  .ground-first1 {
+    font-size: 3.5em;
+    font-weight: 300;
+    color: #0C4767;
+    line-height: 1;
+  }
+
+  .ground-first2 {
+    color: #F3EFF5;
+    font-size: 3.5em;
+    font-weight: 500;
+  }
+
   .ground-second {
     color: #F3EFF5;
-    font-size: 4vw;
+    font-size: 2em;
     line-height: 1.1
   }
 
   .first-entry {
-    margin-top: 12vh;
+    margin-top: 25vh;
   }
 
   .content-title {
-    font-size: 4vh;
+    font-size: 1.5em;
     font-weight: 300;
     margin: 0 10px 0 10px;
   }
@@ -194,7 +284,7 @@
   }
 
   .side-icon {
-    font-size: 6vh;
+    font-size: 2.5em;
     margin-bottom: 2px;
   }
 
@@ -204,7 +294,11 @@
   }
 
   .side-title {
-    font-size: 2vh;
+    font-size: 0.9em;
   }
 
+  .social-buttons {
+    color: #2589BD;
+    font-size: 2em;
+  }
 }
