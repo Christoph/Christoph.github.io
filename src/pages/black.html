@@ -8,22 +8,36 @@
         </span>
     </div>
     <div class="content-body">
-        <p>
-            The goal of Blackbox Viewer is to allow experts to validate and analyse models based on input and output
-            values.
-            The name referes to the fact that I treat all models as black boxes without knowing their internals while
-            supporting users in their tasks of understanding such models.
-            <a class="link" href="https://christoph.github.io/blackbox_viewer/"><i class="fas fa-long-arrow-right"></i>
-                Online
-                Tool</a>
-        </p>
-        <img src="https://www.dropbox.com/s/62hdnpubyl6d29p/black.png?dl=1" alt="Blackbox Viewer"
-            style="width: 100%">Blackbox Viewer interface with a SIR model loaded and a brushed area in the susceptible
-        output.</img>
-        <p>
-            The left side shows all input parameters and the right side all output parameters. The user can through
-            brushing
-            and linking understand how different parametrizations of a model result in different output values.
-        </p>
+        <div class="row">
+            <div class="col m3">
+                <p>
+                    The goal of Blackbox Viewer is to allow experts to <span class="text-highlight">validate </span> and
+                    <span class="text-highlight">analyse models</span> based on input and output values.
+                    All models are treated as black boxes without knowing their internals while supporting users in
+                    understanding such models.
+                    <a class="link" href="https://christoph.github.io/blackbox_viewer/"><i
+                            class="fas fa-long-arrow-right"></i>
+                        Online
+                        Tool</a>
+                </p>
+                <p>
+                    The left visualization in fig. 1 shows all input parameters and the right side all output parameters
+                    of a model. Through <span class="text-highlight">brushing & linking</span> the user can understand
+                    how different
+                    parametrizations result in different model outputs.
+                </p>
+            </div>
+            <div class="col m9">
+                <p>
+                    <img src="https://www.dropbox.com/s/62hdnpubyl6d29p/black.png?dl=1" alt="Blackbox Viewer"
+                        style="width: 100%">Figure 1: Blackbox Viewer interface with a SIR model loaded and a brushed
+                    area in the
+                    susceptible
+                    output.</img>
+
+                </p>
+
+            </div>
+        </div>
     </div>
 </template>

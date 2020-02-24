@@ -115,6 +115,10 @@
   font-weight: 500;
 }
 
+.text-highlight {
+  font-weight: 800;
+}
+
 .link {
   color: #2589BD;
 }
