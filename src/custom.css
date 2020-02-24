@@ -141,11 +141,12 @@
   }
 
   .side-position {
-    top: 55vh;
+    top: 54vh;
     padding: 10px 5px 10px 20px;
   }
 
   .side-title {
+    margin-left: 5px;
     font-size: 3vh;
   }
 
