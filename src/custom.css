@@ -74,7 +74,7 @@
 .content-left {
   background-color: #F3DE8A;
   overflow: hidden;
-  height: 55vh;
+  height: auto;
 
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -88,14 +88,14 @@
   -o-box-shadow: 10px 10px rgba(0, 0, 0, 0.6);
 }
 
-.content-left:hover {
+/* .content-left:hover {
   height: auto;
 
   box-shadow: 10px 10px rgba(0, 0, 0, 0.208);
   -moz-box-shadow: 10px 10px rgba(0, 0, 0, 0.208);
   -webkit-box-shadow: 10px 10px rgba(0, 0, 0, 0.208);
   -o-box-shadow: 10px 10px rgba(0, 0, 0, 0.208);
-}
+} */
 
 .text-fat {
   font-weight: 500;
