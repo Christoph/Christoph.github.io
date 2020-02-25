@@ -124,7 +124,7 @@
   letter-spacing: -2px;
 }
 
-@media screen and (min-width: 1601px) {
+@media screen and (min-width: 2161px) {
   .content-body {
     margin: 0 10px 0 10px;
     font-size: 3em;
@@ -185,7 +185,7 @@
 
 }
 
-@media screen and (min-width: 601px) and (max-width: 1600px) {
+@media screen and (min-width: 601px) and (max-width: 2160px) {
   .content-body {
     margin: 0 10px 0 10px;
   }
