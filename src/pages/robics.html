@@ -1,0 +1,42 @@
+<template>
+  <div class="content-header">
+    <span class="content-title">
+      <i class="fad fa-newspaper" style="color: #2589BD"></i>
+      <span style="color: #F3EFF5">
+        Robics - Robust Topic Models
+      </span>
+    </span>
+  </div>
+  <div class="content-body">
+    <div class="row">
+      <div class="col m3">
+
+        <p>
+          <a class="link" href="https://github.com/Christoph/robics">
+            <span>rob</span>ustTop<span>ics</span></a>
+          is a library targeted at non-machine learning experts interested in building
+          robust
+          topic models. The main goal is to provide a simple to use framework to check if a topic model
+          reaches each run the same or at least a similar result.
+        </p>
+      </div>
+      <div class="col m9">
+        <ul>
+          <li style="list-style-type: circle;">Supports sklearn (LatentDirichletAllocation, NMF) and gensim (LdaModel,
+            ldamulticore, nmf) topic
+            models</li>
+          <li style="list-style-type: circle;">Creates samples based on the sobol sequence which requires less samples
+            than grid-search and makes
+            sure the whole parameter space is used which is not sure in random-sampling.</li>
+          <li style="list-style-type: circle;">Simple topic matching between the different re-initializations for each
+            sample using word vector based
+            coherence scores.</li>
+          <li style="list-style-type: circle;">Ranking of all models based on the Jaccard Distance, the Jensen Shannon
+            Divergence, and Kendall's Tau
+          </li>
+          <li style="list-style-type: circle;">Word based analysis of samples and topic model instances.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
