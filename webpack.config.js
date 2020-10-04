@@ -227,7 +227,7 @@ module.exports = ({
     })),
     ...when(production || server, new CopyWebpackPlugin([{
       from: 'static',
-      to: outDir + "/static/"
+      to: outDir
     }])),
     ...when(analyze, new BundleAnalyzerPlugin())
   ]
