@@ -419,3 +419,9 @@ li {
     display: inline;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .first-entry {
+    margin-top: 30vh;
+  }
+}
