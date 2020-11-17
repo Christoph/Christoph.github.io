@@ -1,7 +1,7 @@
 .ground {
   position: fixed;
   z-index: -1;
-  background-color: #43C59E;
+  background-color: #00A5CF;
 }
 
 li {
@@ -45,7 +45,7 @@ li {
   padding: 5px 5px 10px 8px;
   line-height: 1.2;
 
-  background-color: #F3EFF5;
+  background-color: white;
 
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -69,7 +69,7 @@ li {
   padding: 25px 25px 5px 13px;
   line-height: 1.2;
 
-  background-color: #F3EFF5;
+  background-color: white;
 
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -88,7 +88,7 @@ li {
   width: auto;
 
 
-  background-color: #F3EFF5;
+  background-color: white;
 
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -101,7 +101,8 @@ li {
 }
 
 .content-left {
-  background-color: #F3DE8A;
+  /* background-color: #F3DE8A; */
+  background-color: white;
   overflow: hidden;
   height: auto;
   padding: 0 !important;
@@ -171,13 +172,13 @@ li {
   }
 
   .ground-first2 {
-    color: #F3EFF5;
+    color: white;
     font-size: 8.15em;
     font-weight: 500;
   }
 
   .ground-second {
-    color: #F3EFF5;
+    color: white;
     font-size: 2.75em;
     line-height: 1.1
   }
@@ -235,13 +236,13 @@ li {
   }
 
   .ground-first2 {
-    color: #F3EFF5;
+    color: white;
     font-size: 16.3em;
     font-weight: 500;
   }
 
   .ground-second {
-    color: #F3EFF5;
+    color: white;
     font-size: 6.5em;
     line-height: 1.1
   }
@@ -298,13 +299,13 @@ li {
   }
 
   .ground-first2 {
-    color: #F3EFF5;
+    color: white;
     font-size: 6em;
     font-weight: 500;
   }
 
   .ground-second {
-    color: #F3EFF5;
+    color: white;
     font-size: 2.75em;
     line-height: 1.1
   }
